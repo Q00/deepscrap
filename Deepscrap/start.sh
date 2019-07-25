@@ -1,5 +1,6 @@
 #!/bin/bash
 filename="./name.txt"
+number=20
 while read line; do
     if [ "$line" == "" ]; then
         echo "finish"
@@ -7,15 +8,12 @@ while read line; do
         del=$IFS
         IFS=',' read -a n <<< $line
         array=(${n[@]})
-        echo $array
-        size=$((${#array[@]}/20))
-        echo $size
+        size=$((${#array[@]}/$number))
 
         for index in $(seq 0 $size)
         do
-            a=$(($index*20))
-            #b=$(($a+19))
-            ar=${array[@]:$a:20}
+            spl=$(($index*$number))
+            ar=${array[@]:$spl:$number}
             ar=${ar// /,}
             echo $ar
             eval "scrapy crawl_many -a $ar -o output.json -t json"

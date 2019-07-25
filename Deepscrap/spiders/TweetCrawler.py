@@ -1,6 +1,5 @@
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.selector import Selector
-from scrapy.conf import settings
 from scrapy import http
 from scrapy.shell import inspect_response  # for debugging
 import re
@@ -13,14 +12,16 @@ except ImportError:
     from urllib.parse import quote  # Python 3+
 
 from datetime import datetime
+from scrapy.utils.project import get_project_settings
+settings =get_project_settings()
 
-from TweetScraper.items import Tweet, User
+from Deepscrap.items import Tweet, User
 
 logger = logging.getLogger(__name__)
 
 
-class TweetScraper(CrawlSpider):
-    name = 'TweetScraper'
+class Deepscrap(CrawlSpider):
+    name = 'Deepscrap'
     allowed_domains = ['twitter.com']
 
     def __init__(self, query='', lang='', crawl_user=False, top_tweet=False):

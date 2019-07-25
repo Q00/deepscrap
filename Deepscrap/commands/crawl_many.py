@@ -1,6 +1,7 @@
 import os
+from scrapy.utils.project import get_project_settings
+settings =get_project_settings()
 from scrapy.commands import ScrapyCommand
-from scrapy.conf import settings
 from scrapy.utils.python import without_none_values 
 from scrapy.exceptions import UsageError
 
@@ -31,5 +32,5 @@ class Command(ScrapyCommand):
         names = handle.split(',')
         for name in names:
             if name.strip():
-                self.crawler_process.crawl('TweetScraper', query=f"@{name}")
+                self.crawler_process.crawl('Deepscrap', query=f"@{name}")
         self.crawler_process.start()
