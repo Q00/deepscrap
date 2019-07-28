@@ -16,7 +16,7 @@ This prgram use Scrapy 1.7.2.
     $ cd NSR_2019/intermediate/src/DataCollection/DeepScrap
     $ pip3 install -r requirements.txt
     $ cd Deepscrap
-	  $ ./start.sh
+    $ ./start.sh
 ```
 
 # Usage
@@ -30,7 +30,7 @@ This prgram use Scrapy 1.7.2.
         number=20
 
 3.  Change search_list.txt content to Crawl users. It's structure is tuple.
-    Also you can put other things(e.g. keyword(search term)) in search_list.txt
+    Also you can put other things(e.g. keyword(search term)) in search_list.txt.
 
 ### Other module
 
