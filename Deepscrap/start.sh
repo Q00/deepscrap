@@ -1,5 +1,5 @@
 #!/bin/bash
-filename="./name.txt"
+filename="./search_list.txt"
 number=20
 while read line; do
     if [ "$line" == "" ]; then
