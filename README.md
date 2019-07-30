@@ -8,6 +8,7 @@ The benefits that you can get when you use DeepScrap are you can get rid of the 
 
 `DeepScrap` is fully tested in Ubuntu 18.04.2 LTS and macOS 10.14.5.
 This prgram use Scrapy 1.7.2.
+Python version : 3.7
 
 # Installation
 
