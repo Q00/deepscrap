@@ -28,9 +28,5 @@ class Command(ScrapyCommand):
     def run(self, args, opts):
         if args:
             raise UsageError()
-        handle = opts.a
-        names = handle.split(',')
-        for name in names:
-            if name.strip():
-                self.crawler_process.crawl('Deepscrap', query=f"@{name}")
+        self.crawler_process.crawl('Deepscrap', query=f"from:{opts.a}")
         self.crawler_process.start()

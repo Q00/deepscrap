@@ -27,7 +27,6 @@ class Deepscrap(CrawlSpider):
     allowed_domains = ['twitter.com']
 
     def __init__(self, query='', lang='', crawl_user=False, top_tweet=False):
-
         self.name = query.replace('from:','')
         self.start = time.time()
         super(CrawlSpider, self)
@@ -114,7 +113,6 @@ class Deepscrap(CrawlSpider):
                         a.text = txt
                 text=p.xpath("//p//text()")
                 tweet['text'] = ' '.join(text)
-                print(tweet['text'])
                 if tweet['text'] == '':
                     # If there is not text, we ignore the tweet
                     continue
